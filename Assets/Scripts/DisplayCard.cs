@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEditor.AnimatedValues;
 
 public class DisplayCard : MonoBehaviour
 {
@@ -22,15 +23,12 @@ public class DisplayCard : MonoBehaviour
     public Text descriptionText;
     public Image artImage;
 
+    public bool cardBack;
+    public static bool staticCardBack;
 
     void Start()
     {
         Displaycard[0] = CardDatabase.cardList[displayId];
-    }
-
-   
-    void Update()
-    {
         id = Displaycard[0].id;
         cardName = Displaycard[0].cardName;
         cost = Displaycard[0].cost;
@@ -43,5 +41,11 @@ public class DisplayCard : MonoBehaviour
         powerText.text = " " + power;
         descriptionText.text = " " + cardDescription;
         artImage.sprite = spriteImage;
+    }
+
+   
+    void Update()
+    {
+        staticCardBack = cardBack;
     }
 }
