@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerDeck : MonoBehaviour
 {
     public List<Card> deck = new List<Card>();
+    public List<Card> container = new List<Card>();
     public int x;
+    public int deckSize;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,4 +25,17 @@ public class PlayerDeck : MonoBehaviour
     {
         
     }
+
+
+    public void Shuffle()
+    {
+        for(int i = 0;i < deckSize; i++)
+        {
+            container[0] = deck[i];
+            int randonIndex = Random.Range(i, deckSize);
+            deck[i] = deck[randonIndex];
+            deck[randonIndex] = container[0];
+        }
+    }
+
 }
