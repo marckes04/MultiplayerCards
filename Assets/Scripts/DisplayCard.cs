@@ -14,12 +14,13 @@ public class DisplayCard : MonoBehaviour
     public int cost;
     public int power;
     public string cardDescription;
+    public Sprite spriteImage; 
 
     public Text nameText;
     public Text costText;
     public Text powerText;
     public Text descriptionText;
-
+    public Image artImage;
 
 
     void Start()
@@ -35,11 +36,12 @@ public class DisplayCard : MonoBehaviour
         cost = Displaycard[0].cost;
         power = Displaycard[0].power;
         cardDescription = Displaycard[0].cardDescription;
+        spriteImage = Displaycard[0].spriteImage;
 
         nameText.text = " " + cardName;
         costText.text = " " + cost;
         powerText.text = " " + power;
         descriptionText.text = " " + cardDescription;
-
+        artImage.sprite = spriteImage;
     }
 }
