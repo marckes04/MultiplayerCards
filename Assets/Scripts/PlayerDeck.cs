@@ -5,10 +5,18 @@ using UnityEngine;
 public class PlayerDeck : MonoBehaviour
 {
     public List<Card> deck = new List<Card>();
-    public List<Card> container = new List<Card>();
     public int x;
     public int deckSize;
+    public List<Card> container = new List<Card>();
     // Start is called before the first frame update
+
+
+    public GameObject cardDeck1;
+    public GameObject cardDeck2;
+    public GameObject cardDeck3;
+    public GameObject cardDeck4; 
+
+
     void Start()
     {
         x = 0;
@@ -23,7 +31,25 @@ public class PlayerDeck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(deckSize < 30)
+        {
+            cardDeck1.SetActive(false);
+        }
+
+        if (deckSize < 20)
+        {
+            cardDeck2.SetActive(false);
+        }
+
+        if (deckSize < 5)
+        {
+            cardDeck3.SetActive(false);
+        }
+
+        if (deckSize < 1)
+        {
+            cardDeck3.SetActive(false);
+        }
     }
 
 
